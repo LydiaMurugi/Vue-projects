@@ -5,7 +5,7 @@ const todoText = ref('')
 
 //defineEmits tells vue, this component can send these events to parent
 const emit = defineEmits<{
-  addTodo: [text: string] //Event name(addTodo), sends:a string
+  addTodo: [text: string] // Event name(addTodo), sends:a string
 }>()
 
 const handleAdd = () => {

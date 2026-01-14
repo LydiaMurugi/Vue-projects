@@ -7,12 +7,14 @@ const props = defineProps<{
 
 // Emits: The component can send 3 diff events to the parent
 
-const emits = defineEmits<{
+const emit = defineEmits<{
     toggle: [id: string]
     delete: [id: string]
     edit: [id: string, text: string]
 }>()
-
+const handleToggle = () => {
+  emit('toggle', props.todo.id)
+}
 const handleDelete = () => {
     emit('delete', props.todo.id)
 }
@@ -33,7 +35,7 @@ const handleEdit = () => {
     If todo.completed is true, add 'completed' class
   -->
   <div class="todo-item" :class="{ completed: todo.completed }">
-  // <div :class="todo.completed ? 'completed' : ''">
+  <!-- <div :class="todo.completed ? 'completed' : ''"> -->
     
     <div class="checkbox" @click="handleToggle">
       <!-- 
@@ -58,7 +60,6 @@ const handleEdit = () => {
       >
         ✏️
       </button>
-      
       <button 
         @click="handleDelete" 
         class="action-button delete-button"
