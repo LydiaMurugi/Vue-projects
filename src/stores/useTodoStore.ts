@@ -73,6 +73,12 @@ export const useTodoStore = defineStore('todos', () => {
           text: 'Master Pinia state management',
           completed: false,
           createdAt: Date.now()
+        },
+          {
+          id: '3',
+          text: 'Deploy with netlify',
+          completed: false,
+          createdAt: Date.now()
         }
       ]
   )
