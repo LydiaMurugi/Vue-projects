@@ -17,7 +17,7 @@ const handleAdd = () => {
     todoText.value = ''
   }
 }
-const handleKeyPress = (event: keyboardEvent) => {
+const handleKeyPress = (event: KeyboardEvent) => {
   if (event.key === 'Enter') {
     handleAdd()
   }
